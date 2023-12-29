@@ -1,0 +1,68 @@
+" General
+set fenc=utf-8
+set autoread
+set expandtab
+set tabstop=4
+set shiftwidth=4
+set smartindent
+
+" Apperance
+set number
+set relativenumber
+set cursorline
+"set cursorcolumn
+set colorcolumn=80
+set showmatch matchtime=1
+set showcmd
+"set termguicolors
+syntax on
+
+" Activate Function
+
+" Disable Function
+set nowritebackup
+set nobackup
+set noswapfile
+
+" Search
+set ignorecase
+set smartcase
+set wrapscan
+set incsearch
+set hlsearch
+nmap <Esc><Esc> :nohlsearch<CR><Esc>
+
+
+inoremap jk <ESC>
+
+nnoremap j gj
+nnoremap k gk
+nnoremap <C-h> <C-w>h
+nnoremap <C-j> <C-w>j
+nnoremap <C-k> <C-w>k
+nnoremap <C-l> <C-w>l
+
+let mapleader = " "
+nnoremap <Leader>q :q<CR>
+nnoremap <Leader>w :w<CR>
+
+nnoremap <Leader>e :NERDTreeToggle<CR>
+
+call plug#begin('~/.vim/plugged')
+Plug 'tpope/vim-surround'
+Plug 'tpope/vim-endwise'
+Plug 'cohama/lexima.vim'
+Plug 'scrooloose/nerdtree'
+
+Plug 'vim-airline/vim-airline'
+Plug 'vim-airline/vim-airline-themes'
+Plug 'nordtheme/vim'
+Plug 'ghifarit53/tokyonight-vim'
+call plug#end()
+
+let g:airline_theme = 'bubblegum'
+let g:airline#extensions#tabline#enabled = 1
+nmap K <plug>AirlineSelectNextTab
+nmap J <plug>AirlineSelectPrevTab
+
+colorscheme tokyonight
